@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
 class Calc:
-    def add(self, a, b, c = 0):
-        return a + b + c
+    # Python provides support to generic number of arguments 
+    # (variadic functions)
+    def add(self, *args):
+        return sum(args)
