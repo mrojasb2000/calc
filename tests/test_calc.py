@@ -32,7 +32,14 @@ def test_mul_many_numbers():
 
 def test_div_two_numbers():
     c = Calc()
-    expected = 5.5
-    actual = c.div(11, 2)
+    expected = 6.5
+    actual = c.div(13, 2)
+
+    assert actual == expected
+
+def test_div_by_zero_returns_inf():
+    c = Calc()
+    expected = "inf"
+    actual = c.div(5, 0)
 
     assert actual == expected
