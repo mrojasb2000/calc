@@ -29,3 +29,10 @@ def test_mul_many_numbers():
     actual = c.mul(*s)
 
     assert actual == expected
+
+def test_div_two_numbers():
+    c = Calc()
+    expected = 5.5
+    actual = c.div(11, 2)
+
+    assert actual == expected
