@@ -21,3 +21,11 @@ def test_mul_two_numbers():
     actual = c.mul(6, 4)
 
     assert actual == expected
+
+def test_mul_many_numbers():
+    c = Calc()
+    s = range(1, 10)
+    expected = 362880
+    actual = c.mul(*s)
+
+    assert actual == expected
