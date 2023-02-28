@@ -58,3 +58,11 @@ def test_avg_correct_average():
     actual = c.avg(data)
 
     assert actual == expected
+
+def test_avg_removes_upper_outlies():
+    c = Calc()
+    data = [2, 5, 12, 98]
+    expected = pytest.approx(6.3333333)
+    actual = c.avg(data, ut=90)
+
+    assert actual == expected
