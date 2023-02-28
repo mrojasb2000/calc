@@ -49,4 +49,12 @@ def test_mul_by_zero_raises_exception():
     c = Calc()
 
     with pytest.raises(ValueError):
-        c.mul(3, 0)    
+        c.mul(3, 0)
+
+def test_avg_correct_average():
+    c = Calc()
+    data = [2, 5, 12, 98, 100]
+    expected = 43.4 #29.25
+    actual = c.avg(data)
+
+    assert actual == expected
