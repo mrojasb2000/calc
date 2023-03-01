@@ -82,3 +82,11 @@ def test_avg_upper_threshold_is_included():
     actual = c.avg(data, ut=98)
 
     assert actual == expected
+
+def test_avg_lower_threshold_is_included():
+    c = Calc()
+    data = [2, 5, 12, 98]
+    expected = 29.25
+    actual = c.avg(data, lt=2)
+
+    assert actual == expected
