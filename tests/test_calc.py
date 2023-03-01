@@ -66,3 +66,11 @@ def test_avg_removes_upper_outlies():
     actual = c.avg(data, ut=90)
 
     assert actual == expected
+
+def test_avg_removes_lower_outlines():
+    c = Calc()
+    data = [2, 5, 12, 98]
+    expected = pytest.approx(55)
+    actual = c.avg(data, lt=10)
+
+    assert actual == expected
