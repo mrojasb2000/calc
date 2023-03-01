@@ -53,8 +53,8 @@ def test_mul_by_zero_raises_exception():
 
 def test_avg_correct_average():
     c = Calc()
-    data = [2, 5, 12, 98, 100]
-    expected = 43.4 #29.25
+    data = [2, 5, 12, 98]
+    expected = 29.25
     actual = c.avg(data)
 
     assert actual == expected
@@ -72,5 +72,13 @@ def test_avg_removes_lower_outlines():
     data = [2, 5, 12, 98]
     expected = pytest.approx(55)
     actual = c.avg(data, lt=10)
+
+    assert actual == expected
+
+def test_avg_upper_threshold_is_included():
+    c = Calc()
+    data = [2, 5, 12, 98]
+    expected = 29.25
+    actual = c.avg(data, lt=2)
 
     assert actual == expected
