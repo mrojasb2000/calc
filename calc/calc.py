@@ -21,6 +21,9 @@ class Calc:
             return "inf"
         
     def avg(self, args, lt=None, ut=None):
+        if len(args) == 0:
+            return 0
+        
         if not lt:
             lt = min(args)
 
