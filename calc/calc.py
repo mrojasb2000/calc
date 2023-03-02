@@ -21,18 +21,16 @@ class Calc:
             return "inf"
         
     def avg(self, args, lt=None, ut=None):
-        if len(args) == 0:
-            return 0
         
-        if not lt:
-            lt = min(args)
+        temp = args.copy() # Copy original array
 
-        if not ut:
-           ut = max(args)
+        if lt:
+            temp = [x for x in temp if x >= lt]
+
+        if ut:
+            temp = [x for x in temp if x <= ut]
         
-        _args = [x for x in args if x >= lt and x <= ut]
-        
-        if len(_args) == 0:
+        if not len(temp):
             return 0
         
-        return sum(_args) / len(_args)
+        return sum(temp) / len(temp)
