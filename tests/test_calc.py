@@ -98,3 +98,11 @@ def test_avg_empty_list():
     actual = c.avg(data)
 
     assert actual == expected
+
+def test_avg_manages_empty_list_after_outlier_removal():
+    c = Calc()
+    data = [12, 98]
+    excepted = 0
+    actual = c.avg(data, lt=15, ut=90)
+
+    assert actual == excepted

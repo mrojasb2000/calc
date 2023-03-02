@@ -31,4 +31,8 @@ class Calc:
            ut = max(args)
         
         _args = [x for x in args if x >= lt and x <= ut]
+        
+        if len(_args) == 0:
+            return 0
+        
         return sum(_args) / len(_args)
